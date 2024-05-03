@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -9,7 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CadastroComponent {
   cadastroForm?: FormGroup | undefined;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.cadastroForm = this.formBuilder.group({
@@ -20,7 +22,10 @@ export class CadastroComponent {
     });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const dadosForm = this.cadastroForm?.value;
+    console.log("conferindo dados:", dadosForm)
+  }
 
   markFormGroupTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach(control => {
@@ -30,5 +35,9 @@ export class CadastroComponent {
         this.markFormGroupTouched(control);
       }
     });
+  }
+
+  cancelar() {
+    this.router.navigate(['/dashboard'])
   }
 }
