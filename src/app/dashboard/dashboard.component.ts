@@ -13,4 +13,8 @@ export class DashboardComponent {
     console.log("Clicou no login")
     this.router.navigate(['/login']);
   }
+
+  cadastro() {
+    this.router.navigate(['cadastro']);
+  }
 }
