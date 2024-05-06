@@ -38,6 +38,6 @@ export class CadastroComponent {
   }
 
   cancelar() {
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/login'])
   }
 }

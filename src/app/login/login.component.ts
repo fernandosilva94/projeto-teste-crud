@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,12 @@ export class LoginComponent {
   back() {
     this.router.navigate(['/dashboard']);
 
+  }
+
+  onSubmit() {}
+
+  cadastrar() {
+    this.router.navigate(['/cadastro']);
   }
 
 }
