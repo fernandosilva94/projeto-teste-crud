@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+    { path: '', redirectTo: '/login', pathMatch: 'full'},
     { path: 'dashboard', component: DashboardComponent},
     { path: 'login', component: LoginComponent },
     {path: 'cadastro', component: CadastroComponent}

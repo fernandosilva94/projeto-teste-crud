@@ -1,9 +1,24 @@
-<div class="input-login">
-    <h1>Login</h1>
-    <input type="text" placeholder="e-mail"> <br> <br>
-    <input type="text" placeholder="senha">
-    <br>
-    <button style="color: gray; margin-top: 1rem; margin-left: 2rem; border-color: gray;">Voltar</button>
-    <button style="color: green; margin-top: 1rem; border-color: green;">Logar</button>
-    
-</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="text-center">Login</h1>
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="E-mail">
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Senha">
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Acessar</button>
+                <button type="button" class="btn btn-secondary" (click)="cadastrar()">Cadastre-se</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
