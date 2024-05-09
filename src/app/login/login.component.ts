@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor( private router: Router) { }
-
+  constructor(private router: Router) { }
   ngOnInit(): void {
+
+  }
+  back() {
+    this.router.navigate(['/dashboard']);
 
   }
 
