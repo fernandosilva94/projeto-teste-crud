@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CadastroComponent, LoginComponent, DashboardComponent
   ],
   imports: [
-    BrowserModule, CommonModule, ReactiveFormsModule, AppRoutingModule
+    BrowserModule, CommonModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
