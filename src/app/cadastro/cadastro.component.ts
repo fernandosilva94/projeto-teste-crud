@@ -46,27 +46,6 @@ export class CadastroComponent {
       ).subscribe();
     }
   }
-  // onSubmit() {
-  //   console.log("entrou no onSubmit")
-  //   if (this.cadastroForm?.valid) {
-  //     console.log("entrou no if")
-  //     const user: User = {
-  //       nome: this.cadastroForm.value.nome,
-  //       email: this.cadastroForm.value.email,
-  //       cpf: this.cadastroForm.value.cpf,
-  //       senha: this.cadastroForm.value.senha
-  //     };
-  //     this.userService.addUser(user).subscribe(
-  //       () => {
-  //         alert("Usuário salvo com sucesso!");
-  //       },
-  //       (error) => {
-  //         console.log("Erro ao salvar: " + error.message);
-  //         alert("Erro ao salvar o usuário. Por favor, tente novamente.");
-  //       }
-  //     );
-  //   }
-  // }
 
   markFormGroupTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach(control => {

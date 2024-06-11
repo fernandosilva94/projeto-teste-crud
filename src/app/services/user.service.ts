@@ -13,9 +13,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   addUser(user: User): Observable<User> {
-    console.log("bateu no service salvar")
-    console.log("dados chegando no service: ", user)
-    console.log("conferindo disparo: "+this.apiUrl+"/add")
     return this.http.post<User>(this.apiUrl+"/add", user)
       .pipe(
         catchError((error) => {
@@ -23,18 +20,5 @@ export class UserService {
           throw error;
         })
       )
-  }
-
-  private handleError(error: HttpErrorResponse): Observable<never> {
-    let errorMessage = 'An unknown error occurred!';
-    if (error.error instanceof ErrorEvent) {
-      // Client-side or network error
-      errorMessage = `Client-side error: ${error.error.message}`;
-    } else {
-      // Backend error
-      errorMessage = `Server-side error: ${error.status} ${error.message}`;
-    }
-    console.error(errorMessage);
-    return throwError(() => new Error(errorMessage));
   }
 }
