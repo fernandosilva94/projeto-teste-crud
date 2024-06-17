@@ -38,7 +38,6 @@ export class LoginComponent {
           loginData.password
         );
         const responseToken = await response.token;
-        console.log("verificando token: ", responseToken)
 
         localStorage.setItem('authToken', responseToken);
 

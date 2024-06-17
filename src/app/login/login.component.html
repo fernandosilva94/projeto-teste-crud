@@ -1,56 +1,34 @@
-<!-- <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h1 class="text-center">Login</h1>
-            <form (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="E-mail">
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="text-center">Login</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <input type="text" formControlName="email" class="form-control" placeholder="E-mail">
+              <div
+                *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
+                class="text-danger">
+                <div *ngIf="loginForm.get('email')?.errors?.['required']">E-mail é obrigatório.</div>
+                <div *ngIf="loginForm.get('email')?.errors?.['email']">E-mail inválido.</div>
               </div>
-              <div class="mb-3">
-                <input type="password" class="form-control" placeholder="Senha">
+            </div>
+            <div class="mb-3">
+              <input type="password" formControlName="senha" class="form-control" placeholder="Senha">
+              <div
+                *ngIf="loginForm.get('senha')?.invalid && (loginForm.get('senha')?.dirty || loginForm.get('senha')?.touched)"
+                class="text-danger">
+                <div *ngIf="loginForm.get('senha')?.errors?.['required']">Senha é obrigatória.</div>
               </div>
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary">Acessar</button>
-                <button type="button" class="btn btn-secondary" (click)="cadastrar()">Cadastre-se</button>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Acessar</button>
+              <button type="button" class="btn btn-secondary" (click)="cadastrar()">Cadastre-se</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-   -->]
-
-   <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h1 class="text-center">Login</h1>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                <input type="text" formControlName="email" class="form-control" placeholder="E-mail">
-                <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-danger">
-                  <div *ngIf="loginForm.get('email')?.errors?.['required']">E-mail é obrigatório.</div>
-                  <div *ngIf="loginForm.get('email')?.errors?.['email']">E-mail inválido.</div>
-                </div>
-              </div>
-              <div class="mb-3">
-                <input type="password" formControlName="senha" class="form-control" placeholder="Senha">
-                <div *ngIf="loginForm.get('senha')?.invalid && (loginForm.get('senha')?.dirty || loginForm.get('senha')?.touched)" class="text-danger">
-                  <div *ngIf="loginForm.get('senha')?.errors?.['required']">Senha é obrigatória.</div>
-                </div>
-              </div>
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Acessar</button>
-                <button type="button" class="btn btn-secondary" (click)="cadastrar()">Cadastre-se</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+</div>

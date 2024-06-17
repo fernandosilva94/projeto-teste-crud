@@ -29,9 +29,7 @@ export class CadastroComponent {
   }
 
   onSubmit() {
-    console.log("entrou no onSubmit")
     if (this.cadastroForm?.valid) {
-      console.log("entrou no if")
       const user: User = {
         nome: this.cadastroForm.value.nome,
         email: this.cadastroForm.value.email,
