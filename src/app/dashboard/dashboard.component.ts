@@ -36,6 +36,7 @@ export class DashboardComponent {
     try {
       const email =  this.authService.getUserEmailFromToken();
       const user = await this.userService.getUserByEmail(email);
+      console.log("verificando instancia: ", user)
       this.userName = user.nome;
     } catch(error) {
 
