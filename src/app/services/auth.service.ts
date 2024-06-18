@@ -15,7 +15,6 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<any> {
   const loginData = { email, password };
-  console.log("verificando login: ", loginData);
 
       try {
         const response = await fetch(`${this.apiUrl}/authenticate`, {
@@ -46,9 +45,6 @@ export class AuthService {
     }
 
     const payload = JSON.parse(atob(token.split('.')[1]));
-    console.log("verificando payload do usuario: ", payload)
-    console.log("verificando id do usuario através do token: ", payload.userId)
-    console.log("verificando email do usuario através do token: ", payload.sub)
     return payload.sub;
   }
 
